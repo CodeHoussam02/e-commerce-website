@@ -1,0 +1,15 @@
+.scroller {
+    flex-wrap: nowrap;
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller__inner {
+    width: max-content;
+    animation: scroll 50s linear infinite;
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 2rem));
+    }
+}
