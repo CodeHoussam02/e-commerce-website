@@ -10,16 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.5.7",
+    "@headlessui/react": "^2.0.3",
+    "@headlessui/tailwindcss": "^0.2.0",
+    "@tremor/react": "^3.16.2",
     "embla-carousel-autoplay": "^8.0.0",
     "embla-carousel-react": "^8.0.0",
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.1",
-    "recharts": "^2.12.7"
+    "react-router-dom": "^6.21.1"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react-swc": "^3.5.0",
