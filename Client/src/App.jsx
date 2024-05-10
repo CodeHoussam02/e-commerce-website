@@ -11,6 +11,7 @@ import Signup from './pages/Signup'
 import Forgetpage from './pages/Forgetpage'
 import Passwordpage from './pages/Passwordpage'
 import Cart from './pages/Cart'
+import Dashbord from './pages/dashbord/page'
 
 
 
@@ -27,6 +28,7 @@ const routes = createBrowserRouter(createRoutesFromElements(
     </Route>
     <Route path='/forgotmail' element={<Forgetpage />} />
     <Route path='/newpassword' element={<Passwordpage />} />
+    <Route path='/dashboard' element={<Dashbord />} />
   </>
 ))
 
