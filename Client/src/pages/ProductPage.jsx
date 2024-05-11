@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProductPage = () => {
     const [images, setImages] = useState({
@@ -12,8 +13,13 @@ const ProductPage = () => {
 
     const [amount, setAmount] = useState(1);
 
+    const navigate = useNavigate()
+
     return (
-        <div className="px-[120px] py-[100px] flex flex-col justify-between lg:flex-row gap-16 lg:items-center font-poppins">
+        <div className="px-[120px] py-[130px] flex flex-col justify-between lg:flex-row gap-16 lg:items-center font-poppins relative">
+            <span className="absolute top-12 text-md cursor-pointer bg-[#bef200b2] px-8 py-2 rounded-md font-semibold active:bg-[#BFF200]" onClick={_ => navigate('/')}>
+                back
+            </span>
             <div className="flex flex-col gap-6 lg:w-2/4">
                 <img
                     src={activeImg}
