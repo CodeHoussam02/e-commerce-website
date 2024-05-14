@@ -237,7 +237,6 @@ const makeActive = async (req, res) => {
     try {
         const data = req.params.activationcode;
         const activationCode = data.split("=")[1].split("&")[0];
-        console.log(activationCode);
         // loock for this user
         const user = await User.find({ activationcode: activationCode });
         if (!user) {
@@ -248,7 +247,6 @@ const makeActive = async (req, res) => {
             });
         }
         user.isActive = true;
-        console.log(user)
         await user.save();
         res.status(200).json({
             status: httpStatus.SUCCES,

@@ -19,12 +19,10 @@ import Cart from "./pages/Cart";
 import Dashbord from "./pages/dashbord/page";
 import ProductPage from "./pages/ProductPage";
 import Verification from "./pages/verifyPage";
-import axios from "axios";
 import ActivationPage from "./pages/activationPage";
+import { Provider } from "react-redux";
+import store from "./app/store"
 
-// default url
-axios.defaults.baseURL = "http://localhost:8080";
-axios.defaults.withCredentials = true;
 
 const routes = createBrowserRouter(
     createRoutesFromElements(
@@ -51,7 +49,9 @@ const routes = createBrowserRouter(
 function App() {
     return (
         <>
-            <RouterProvider router={routes} />
+            <Provider store={store}>
+                <RouterProvider router={routes} />
+            </Provider>
         </>
     );
 }

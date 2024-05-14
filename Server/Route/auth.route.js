@@ -7,7 +7,7 @@ router.route("/signup").post(validateUserSchema(), authActions.signUp);
 
 router.route("/login").post(authActions.signIn);
 
-router.route("verify/:activationcode")
+router.route("verification/:activationcode")
     .post(authActions.makeActive)
 
 // router.route('/email')
