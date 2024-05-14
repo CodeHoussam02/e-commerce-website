@@ -1,30 +1,32 @@
-const mongoose = require('mongoose');
+const mongoose  = require('mongoose');
 const validator = require('validator');
-const roles = require('../Utils/user.roles')
+const roles     = require('../Utils/user.roles');
 
-const userSchema = mongoose.Schema({
+
+const userSchema = new mongoose.Schema({
     fullname: {
-        type: String,
+        type: String, 
         required: true
     }, 
     email: {
         type: String, 
         required: true, 
-        validator: [validator.isEmail, "Email is unvalid"], 
-        unique
+        unique: true, 
+        validate: [validator.isEmail, 'Email is unvalid']
     }, 
     password: {
-        type: String, 
-        required: true, 
+        type: String,
+        reequired: true
     }, 
     token: {
         type: String, 
         required: true
     }, 
     role: {
-        enum: [roles.ADMIN, roles.MANAGER], 
+        type: String,
         required: true,
-        default: roles.USER,
+        enum: [roles.ADMIN, roles.USER, roles.MANAGER], 
+        default: roles.USER
     }, 
     isAdmin: {
         type: Boolean, 
@@ -33,10 +35,15 @@ const userSchema = mongoose.Schema({
     }, 
     isActive: {
         type: Boolean, 
-        required: true, 
+        required: true,
         default: false
-    }
+    }, 
+    activationCode: String
 }, {timestamps: true})
 
+module.exports = mongoose.model('User', userSchema)
 
-module.exports = mongoose.Model('User', userSchema)
+
+
+
+
